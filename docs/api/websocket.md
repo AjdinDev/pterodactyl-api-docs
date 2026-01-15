@@ -495,6 +495,8 @@ All WebSocket messages use JSON format with the following structure:
 | `send command` | Client → Server | Send console command |
 | `set state` | Client → Server | Change server power state |
 | `console output` | Server → Client | Console output/logs |
+| `install logs` | Server → Client | Sends the installation logs |
+| `transfer logs` | Server → Client | Sends the transfer logs |
 | `status` | Server → Client | Server status updates |
 | `stats` | Server → Client | Resource usage statistics |
 | `jwt error` | Server → Client | Authentication error |
