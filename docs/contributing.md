@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 title: Contributing to Documentation
-description: Learn how to contribute to the NETVPX Pterodactyl API documentation
+description: Learn how to contribute to the Pterodactyl API documentation
 keywords: [contributing, documentation, pterodactyl api, open source, collaboration]
 ---
 
@@ -198,7 +198,7 @@ curl -X GET "https://example.com/api/endpoint"
 - Be respectful and constructive
 - Help others learn and grow
 - Focus on improving the documentation
-- Maintain NETVPX branding consistency
+- Match the existing documentation style and structure
 
 ## 🔧 Development Tools
 
@@ -239,9 +239,7 @@ Contributors are recognized in several ways:
 Need assistance with your contribution?
 
 - **GitHub Discussions**: Ask questions and get help
-- **Discord**: Join the Pterodactyl community chat
 - **Documentation Issues**: Report bugs or unclear instructions
-- **NETVPX Support**: Contact for hosting-related questions
 
 ## 🎉 Thank You!
 
@@ -249,4 +247,4 @@ Every contribution, no matter how small, helps make the Pterodactyl API document
 
 ---
 
-*For detailed technical contribution guidelines, see our [CONTRIBUTING.md](https://github.com/netvpx/pterodactyl-api-docs/blob/main/CONTRIBUTING.md) file.* 
+*For detailed technical contribution guidelines, see our [CONTRIBUTING.md](https://github.com/AjdinDev/pterodactyl-api-docs/blob/main/CONTRIBUTING.md) file.* 

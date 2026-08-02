@@ -1,25 +1,25 @@
 {
-  "name": "netvpx-pterodactyl-api-docs",
+  "name": "pteroapi-docs",
   "version": "1.0.0",
   "private": true,
-  "description": "Complete API documentation for Pterodactyl Panel v1 - Maintained by NETVPX for the community",
+  "description": "Complete API documentation for Pterodactyl Panel v1",
   "keywords": [
     "pterodactyl",
     "api",
     "documentation",
-    "netvpx",
+    "pteroapi",
     "server-management"
   ],
-  "homepage": "https://pterodactyl-api-docs.netvpx.com",
+  "homepage": "https://pteroapi.com",
   "bugs": {
-    "url": "https://github.com/netvpx/pterodactyl-api-docs/issues"
+    "url": "https://github.com/AjdinDev/pterodactyl-api-docs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/netvpx/pterodactyl-api-docs.git"
+    "url": "https://github.com/AjdinDev/pterodactyl-api-docs.git"
   },
   "license": "MIT",
-  "author": "NETVPX",
+  "author": "PteroAPI contributors",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -46,9 +46,10 @@
     "validate:codetabs": "node scripts/validate-codetabs.js"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.4.0",
-    "@docusaurus/preset-classic": "^3.4.0",
-    "@docusaurus/theme-mermaid": "^3.4.0",
+    "@docusaurus/core": "^3.10.2",
+    "@docusaurus/faster": "^3.10.2",
+    "@docusaurus/preset-classic": "^3.10.2",
+    "@docusaurus/theme-mermaid": "^3.10.2",
     "@easyops-cn/docusaurus-search-local": "^0.52.0",
     "@giscus/react": "^3.1.0",
     "@mdx-js/react": "^3.0.0",
@@ -59,8 +60,8 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.8.1",
-    "@docusaurus/types": "3.8.1",
+    "@docusaurus/module-type-aliases": "^3.10.2",
+    "@docusaurus/types": "^3.10.2",
     "@types/jest": "^30.0.0",
     "@types/node": "^20.0.0",
     "@types/react": "^19.1.8",

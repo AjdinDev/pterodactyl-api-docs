@@ -34,7 +34,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Complete API documentation for Pterodactyl Panel v1 - Maintained by NETVPX for the community">
+      description="Complete API documentation for Pterodactyl Panel v1">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

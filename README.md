@@ -1,16 +1,16 @@
 # 🚀 Pterodactyl API Documentation
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/netvpx/pterodactyl-api-docs/build.yml?branch=main&style=flat-square)](https://github.com/netvpx/pterodactyl-api-docs/actions)
-[![Documentation](https://img.shields.io/badge/docs-live-blue?style=flat-square)](https://pterodactyl-api-docs.netvpx.com)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/AjdinDev/pterodactyl-api-docs/build.yml?branch=main&style=flat-square)](https://github.com/AjdinDev/pterodactyl-api-docs/actions)
+[![Documentation](https://img.shields.io/badge/docs-live-blue?style=flat-square)](https://pteroapi.com)
 [![API Tests](https://img.shields.io/badge/API%20tests-38%2F38%20passing-green?style=flat-square)](#api-testing)
-[![Contributors](https://img.shields.io/github/contributors/netvpx/pterodactyl-api-docs?style=flat-square)](https://github.com/netvpx/pterodactyl-api-docs/graphs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/AjdinDev/pterodactyl-api-docs?style=flat-square)](https://github.com/AjdinDev/pterodactyl-api-docs/graphs/contributors)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
 **Complete API documentation and testing suite for Pterodactyl Panel v1.0+**
 
-Maintained by [NETVPX](https://netvpx.com) and shared freely with the Pterodactyl community. This comprehensive documentation covers all API endpoints with multi-language examples, interactive testing, and detailed implementation guides.
+Shared freely with the Pterodactyl community, PteroAPI provides comprehensive documentation for API endpoints with multi-language examples, interactive testing, and detailed implementation guides.
 
-📖 **[View Live Documentation →](https://pterodactyl-api-docs.netvpx.com)**
+📖 **[View Live Documentation →](https://pteroapi.com)**
 
 ## 🎯 About This Project
 
@@ -68,13 +68,13 @@ This is the **most comprehensive Pterodactyl API documentation** available, feat
 
 ### 🔍 Using the Documentation
 
-**🌐 View Online**: [pterodactyl-api-docs.netvpx.com](https://pterodactyl-api-docs.netvpx.com)
+**🌐 View Online**: [pteroapi.com](https://pteroapi.com)
 
 **📝 Quick API Reference**:
-- [Client API Overview](https://pterodactyl-api-docs.netvpx.com/docs/api/client) - User server management
-- [Application API Overview](https://pterodactyl-api-docs.netvpx.com/docs/api/application) - Admin panel management  
-- [WebSocket API](https://pterodactyl-api-docs.netvpx.com/docs/api/websocket) - Real-time console access
-- [Authentication Guide](https://pterodactyl-api-docs.netvpx.com/docs/authentication) - API keys and security
+- [Client API Overview](https://pteroapi.com/docs/api/client) - User server management
+- [Application API Overview](https://pteroapi.com/docs/api/application) - Admin panel management  
+- [WebSocket API](https://pteroapi.com/docs/api/websocket) - Real-time console access
+- [Authentication Guide](https://pteroapi.com/docs/authentication) - API keys and security
 
 ### 💻 Local Development
 
@@ -238,7 +238,7 @@ For small fixes:
 
 For significant changes:
 1. Read our [Contributing Guidelines](CONTRIBUTING.md)
-2. Check out our [documentation contribution guide](https://pterodactyl-api-docs.netvpx.com/docs/contributing)
+2. Check out our [documentation contribution guide](https://pteroapi.com/docs/contributing)
 3. Fork the repository
 4. Create a feature branch
 5. Make your changes and test locally
@@ -249,7 +249,7 @@ For significant changes:
 - All code examples must be tested and working
 - Follow the established multi-language format
 - Use CodeTabs component for code examples
-- Maintain NETVPX branding and style consistency
+- Match the existing documentation style and structure
 
 ## Automated Testing & CI/CD
 
@@ -262,16 +262,13 @@ For significant changes:
 
 For support with this documentation:
 
-- **GitHub Issues**: [Report bugs or request improvements](https://github.com/netvpx/pterodactyl-api-docs/issues)
-- **GitHub Discussions**: [Ask questions and share ideas](https://github.com/netvpx/pterodactyl-api-docs/discussions)
-- **NETVPX Support**: [https://netvpx.com/support](https://netvpx.com/support)
-- **Pterodactyl Community**: [Discord](https://discord.gg/pterodactyl)
+- **GitHub Issues**: [Report bugs or request improvements](https://github.com/AjdinDev/pterodactyl-api-docs/issues)
+- **GitHub Discussions**: [Ask questions and share ideas](https://github.com/AjdinDev/pterodactyl-api-docs/discussions)
 
 ## Related Links
 
 - **Pterodactyl Panel**: [https://pterodactyl.io/](https://pterodactyl.io/)
 - **Pterodactyl GitHub**: [https://github.com/pterodactyl/panel](https://github.com/pterodactyl/panel)
-- **NETVPX**: [https://netvpx.com/](https://netvpx.com/)
 - **Docusaurus**: [https://docusaurus.io/](https://docusaurus.io/)
 
 ## Recognition
@@ -286,4 +283,4 @@ The Pterodactyl Panel software is licensed under the MIT License by the Pterodac
 
 ---
 
-**Maintained with ❤️ by [NETVPX](https://netvpx.com) and shared freely with the Pterodactyl community.**
+**Shared freely with the Pterodactyl community.**

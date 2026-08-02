@@ -1,7 +1,7 @@
 {
-  "name": "NETVPX Pterodactyl API Documentation",
-  "short_name": "NETVPX API Docs",
-  "description": "Complete API reference and developer guide for Pterodactyl Panel v1 - Server management made easy",
+  "name": "PteroAPI",
+  "short_name": "PteroAPI",
+  "description": "Complete API reference and developer guide for Pterodactyl Panel v1",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -67,14 +67,14 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "NETVPX API Documentation Desktop View"
+      "label": "PteroAPI Desktop View"
     },
     {
       "src": "/img/screenshot-narrow.png",
       "sizes": "375x812",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "NETVPX API Documentation Mobile View"
+      "label": "PteroAPI Mobile View"
     }
   ],
   "related_applications": [],

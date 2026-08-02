@@ -14,7 +14,7 @@ keywords:
   - pterodactyl panel client
   - server control endpoints
   - hosting api
-image: /img/netvpx-social-card.jpg
+image: /img/pteroapi-social-card.jpg
 ---
 
 # Client API

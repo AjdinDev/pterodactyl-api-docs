@@ -4,8 +4,11 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const path = require('path');
 
+const siteUrl = 'https://pteroapi.com';
+const githubRepoUrl = 'https://github.com/AjdinDev/pterodactyl-api-docs';
+
 const config: Config = {
-  title: 'NETVPX Pterodactyl API Documentation',
+  title: 'Pterodactyl API Documentation',
   tagline: 'Complete API reference and developer guide for Pterodactyl Panel v1 - Server management made easy',
   favicon: 'img/favicon.ico',
 
@@ -15,16 +18,20 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://pterodactyl-api-docs.netvpx.com',
+  url: siteUrl,
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  organizationName: 'netvpx',
+  organizationName: 'AjdinDev',
   projectName: 'pterodactyl-api-docs',
 
   onBrokenLinks: 'warn', // Allow broken links for now during development
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   // Improve SEO with better configuration
   trailingSlash: false, // Better for SEO consistency
@@ -53,14 +60,6 @@ const config: Config = {
         crossorigin: 'anonymous',
       },
     },
-    // DNS prefetch for external resources
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'dns-prefetch',
-        href: 'https://pterodactyl-api-docs.netvpx.com',
-      },
-    },
     // Web App Manifest
     {
       tagName: 'link',
@@ -78,23 +77,7 @@ const config: Config = {
         href: '/img/apple-touch-icon.png',
       },
     },
-    // Plausible Analytics
-    {
-      tagName: 'script',
-      attributes: {
-        defer: 'true',
-        'data-domain': 'pterodactyl-api-docs.netvpx.com',
-        src: 'https://stats.cloudnovi.com/js/script.file-downloads.hash.outbound-links.pageview-props.tagged-events.js',
-      },
-    },
-    {
-      tagName: 'script',
-      attributes: {
-        type: 'text/javascript',
-      },
-      innerHTML: 'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
-    },
-    // Structured data for the organization
+    // Structured data for the website
     {
       tagName: 'script',
       attributes: {
@@ -102,20 +85,10 @@ const config: Config = {
       },
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'Organization',
-        name: 'NETVPX',
-        url: 'https://netvpx.com',
-        logo: 'https://pterodactyl-api-docs.netvpx.com/img/logo.png',
-        description: 'Hosting solutions and API documentation maintained for the community',
-        contactPoint: {
-          '@type': 'ContactPoint',
-          contactType: 'customer support',
-          url: 'https://netvpx.com/support'
-        },
-        sameAs: [
-          'https://github.com/pterodactyl',
-          'https://discord.gg/pterodactyl'
-        ]
+        '@type': 'Website',
+        name: 'PteroAPI',
+        url: siteUrl,
+        description: 'Complete API reference and developer guide for Pterodactyl Panel'
       }),
     },
     // Structured data for the documentation
@@ -129,11 +102,11 @@ const config: Config = {
         '@type': 'TechArticle',
         name: 'Pterodactyl Panel API Documentation',
         description: 'Complete API reference and developer guide for Pterodactyl Panel',
-        url: 'https://pterodactyl-api-docs.netvpx.com',
+        url: siteUrl,
         publisher: {
           '@type': 'Organization',
-          name: 'NETVPX',
-          logo: 'https://pterodactyl-api-docs.netvpx.com/img/logo.png'
+          name: 'PteroAPI',
+          logo: `${siteUrl}/img/logo.svg`
         },
         about: {
           '@type': 'SoftwareApplication',
@@ -147,7 +120,7 @@ const config: Config = {
         },
         inLanguage: 'en-US',
         isAccessibleForFree: true,
-        keywords: 'pterodactyl, api, documentation, server management, hosting, game servers, REST API, developer guide'
+        keywords: 'pterodactyl, api, documentation, server management, game servers, REST API, developer guide'
       }),
     },
   ],
@@ -184,7 +157,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           // Enable GitHub edit links
-          editUrl: 'https://github.com/netvpx/pterodactyl-api-docs/tree/master/',
+          editUrl: `${githubRepoUrl}/tree/main/`,
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
           // Add breadcrumbs for better navigation and SEO
@@ -220,7 +193,7 @@ const config: Config = {
 
   themeConfig: {
     // Enhanced meta image for social sharing
-    image: 'img/netvpx-social-card.jpg',
+    image: 'img/pteroapi-social-card.jpg',
     
     // Giscus configuration
     giscus: {
@@ -234,43 +207,41 @@ const config: Config = {
     metadata: [
       // Basic SEO meta tags
       {name: 'description', content: 'Complete API reference and developer guide for Pterodactyl Panel v1. Learn to build applications with server management, file operations, database management, and more.'},
-      {name: 'keywords', content: 'pterodactyl api, server management api, game server hosting, rest api documentation, netvpx, panel api, hosting automation, server control api, game hosting api'},
-      {name: 'author', content: 'NETVPX'},
+      {name: 'keywords', content: 'pterodactyl api, server management api, game server hosting, rest api documentation, panel api, hosting automation, server control api, game hosting api'},
+      {name: 'author', content: 'PteroAPI contributors'},
       {name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'},
       {name: 'googlebot', content: 'index, follow'},
       
       // Open Graph meta tags for social sharing
-      {property: 'og:site_name', content: 'NETVPX API Documentation'},
+      {property: 'og:site_name', content: 'PteroAPI'},
       {property: 'og:type', content: 'website'},
       {property: 'og:locale', content: 'en_US'},
-      {property: 'og:title', content: 'NETVPX Pterodactyl API Documentation - Complete Developer Guide'},
+      {property: 'og:title', content: 'PteroAPI - Pterodactyl API Documentation'},
       {property: 'og:description', content: 'Complete API reference and developer guide for Pterodactyl Panel v1. Learn to build applications with server management, file operations, database management, and more.'},
-      {property: 'og:url', content: 'https://pterodactyl-api-docs.netvpx.com'},
-      {property: 'og:image', content: 'https://pterodactyl-api-docs.netvpx.com/img/social/_docs_api_client.jpg'},
-      {property: 'og:image:alt', content: 'NETVPX Pterodactyl API Documentation'},
+      {property: 'og:url', content: siteUrl},
+      {property: 'og:image', content: `${siteUrl}/img/social/_docs_api_client.jpg`},
+      {property: 'og:image:alt', content: 'PteroAPI Pterodactyl API Documentation'},
       {property: 'og:image:width', content: '1200'},
       {property: 'og:image:height', content: '630'},
       {property: 'og:image:type', content: 'image/jpeg'},
       
       // Twitter Card meta tags
       {name: 'twitter:card', content: 'summary_large_image'},
-      {name: 'twitter:site', content: '@netvpx'},
-      {name: 'twitter:creator', content: '@netvpx'},
-      {name: 'twitter:title', content: 'NETVPX Pterodactyl API Documentation - Complete Developer Guide'},
+      {name: 'twitter:title', content: 'PteroAPI - Pterodactyl API Documentation'},
       {name: 'twitter:description', content: 'Complete API reference and developer guide for Pterodactyl Panel v1. Learn to build applications with server management, file operations, database management, and more.'},
-      {name: 'twitter:image', content: 'https://pterodactyl-api-docs.netvpx.com/img/social/_docs_api_client.jpg'},
-      {name: 'twitter:image:alt', content: 'NETVPX Pterodactyl API Documentation'},
+      {name: 'twitter:image', content: `${siteUrl}/img/social/_docs_api_client.jpg`},
+      {name: 'twitter:image:alt', content: 'PteroAPI Pterodactyl API Documentation'},
       
       // Additional SEO meta tags
       {name: 'theme-color', content: '#1a365d'},
       {name: 'msapplication-TileColor', content: '#1a365d'},
       {name: 'apple-mobile-web-app-capable', content: 'yes'},
       {name: 'apple-mobile-web-app-status-bar-style', content: 'default'},
-      {name: 'apple-mobile-web-app-title', content: 'NETVPX API Docs'},
+      {name: 'apple-mobile-web-app-title', content: 'PteroAPI'},
       
       // Web App Manifest
       {name: 'mobile-web-app-capable', content: 'yes'},
-      {name: 'application-name', content: 'NETVPX Pterodactyl API Docs'},
+      {name: 'application-name', content: 'PteroAPI'},
       
 
     ],
@@ -283,16 +254,7 @@ const config: Config = {
     },
 
     navbar: {
-      title: 'NETVPX',
-      logo: {
-        alt: 'NETVPX Logo - API Documentation for the Community',
-        src: 'img/logo.svg',
-        srcDark: 'img/logo.svg',
-        href: 'https://pterodactyl-api-docs.netvpx.com',
-        target: '_self',
-        width: 32,
-        height: 32,
-      },
+      title: 'Pterodactyl API Documentation',
       items: [
         {
           type: 'docSidebar',
@@ -356,13 +318,8 @@ const config: Config = {
           ],
         },
         {
-          title: 'Community',
+          title: 'Project',
           items: [
-            {
-              label: 'Pterodactyl Discord',
-              href: 'https://discord.gg/pterodactyl',
-              'aria-label': 'Join Pterodactyl Community Discord',
-            },
             {
               label: 'Pterodactyl GitHub',
               href: 'https://github.com/pterodactyl',
@@ -370,51 +327,21 @@ const config: Config = {
             },
             {
               label: 'Documentation Issues',
-              href: 'https://github.com/netvpx/pterodactyl-api-docs/issues',
+              href: `${githubRepoUrl}/issues`,
               'aria-label': 'Report Documentation Issues',
-            },
-          ],
-        },
-        {
-          title: 'NETVPX',
-          items: [
-            {
-              label: 'NETVPX Website',
-              href: 'https://netvpx.com',
-              'aria-label': 'NETVPX Official Website',
-            },
-            {
-              label: 'NETVPX Discord',
-              href: 'https://netvpx.com/discord',
-              'aria-label': 'NETVPX Discord',
-            },
-            {
-              label: 'NETVPX Support',
-              href: 'https://netvpx.com/support',
-              'aria-label': 'NETVPX Customer Support',
-            },
-            {
-              label: 'Privacy Policy',
-              href: 'https://netvpx.com/privacy',
-              'aria-label': 'NETVPX Privacy Policy',
-            },
-            {
-              label: 'Terms of Service',
-              href: 'https://netvpx.com/terms',
-              'aria-label': 'NETVPX Terms of Service',
             },
           ],
         },
       ],
       logo: {
-        alt: 'NETVPX Footer Logo',
-        src: 'img/logo-netvpx-dark.svg',
-        srcDark: 'img/logo-netvpx-dark.svg',
-        href: 'https://netvpx.com',
-        width: 160,
+        alt: 'PteroAPI Footer Logo',
+        src: 'img/logo.svg',
+        srcDark: 'img/logo.svg',
+        href: siteUrl,
+        width: 32,
         height: 32,
       },
-      copyright: `Copyright © ${new Date().getFullYear()} NETVPX. Built with ❤️ by NETVPX and shared freely for developers.`,
+      copyright: `Copyright © ${new Date().getFullYear()} PteroAPI contributors. Shared freely for developers.`,
     },
     
     // Enhanced table of contents
