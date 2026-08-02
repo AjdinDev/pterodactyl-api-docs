@@ -104,7 +104,7 @@ When adding or updating code examples:
 ## 🔧 Development Setup
 
 ### Prerequisites
-- Node.js 20.0+
+- Node.js 24 LTS
 - npm or yarn
 
 ### Local Development
@@ -171,4 +171,4 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 **Thank you for helping make Pterodactyl API documentation better for everyone! 🎉**
 
-*This project is shared freely with the Pterodactyl community.* 
+*This project is shared freely with the Pterodactyl community.*

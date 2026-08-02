@@ -79,7 +79,7 @@ This is the **most comprehensive Pterodactyl API documentation** available, feat
 ### 💻 Local Development
 
 **Prerequisites:**
-- Node.js 20.0+ (recommended: use [nvm](https://github.com/nvm-sh/nvm))
+- Node.js 24 LTS (recommended: use [nvm](https://github.com/nvm-sh/nvm))
 - npm or yarn package manager
 
 ```bash
