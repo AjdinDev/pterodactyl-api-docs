@@ -1407,13 +1407,14 @@ PATCH /api/application/servers/{server}/build
 
 
 
-<Tabs>
-<TabItem value="curl" label="cURL">
-```bash
-curl -X PATCH "https://your-panel.com/api/application/servers/2/build" \
-  -H "Authorization: Bearer ptla_YOUR_API_KEY" \
-  -H "Accept: Application/vnd.pterodactyl.v1+json" \
-  -H "Content-Type: application/json" \
+<CodeTabs
+  endpoint="/api/application/servers/{server}/build"
+  method="PATCH"
+  examples={{
+    curl: `curl -X PATCH "https://your-panel.com/api/application/servers/2/build" \\
+  -H "Authorization: Bearer ptla_YOUR_API_KEY" \\
+  -H "Accept: Application/vnd.pterodactyl.v1+json" \\
+  -H "Content-Type: application/json" \\
   -d '{
     "allocation": 1,
     "memory": 2048,
@@ -1426,8 +1427,224 @@ curl -X PATCH "https://your-panel.com/api/application/servers/2/build" \
       "allocations": 2,
       "backups": 10
     }
-  }'
-```
+  }'`,
+    javascript: `const axios = require('axios');
+
+const serverId = 2;
+const updatedConfiguration = {
+  allocation: 1,
+  memory: 2048,
+  swap: 0,
+  disk: 4096,
+  io: 500,
+  cpu: 200,
+  feature_limits: {
+    databases: 5,
+    allocations: 2,
+    backups: 10
+  }
+};
+
+const response = await axios.patch(\`https://your-panel.com/api/application/servers/\${serverId}/build\`, updatedConfiguration, {
+  headers: {
+    'Authorization': 'Bearer ptla_YOUR_API_KEY',
+    'Accept': 'Application/vnd.pterodactyl.v1+json',
+    'Content-Type': 'application/json'
+  }
+});
+
+console.log(response.data);`,
+    python: `import requests
+
+server_id = 2
+headers = {
+    'Authorization': 'Bearer ptla_YOUR_API_KEY',
+    'Accept': 'Application/vnd.pterodactyl.v1+json',
+    'Content-Type': 'application/json'
+}
+updated_configuration = {
+    'allocation': 1,
+    'memory': 2048,
+    'swap': 0,
+    'disk': 4096,
+    'io': 500,
+    'cpu': 200,
+    'feature_limits': {
+        'databases': 5,
+        'allocations': 2,
+        'backups': 10
+    }
+}
+
+response = requests.patch(
+    f'https://your-panel.com/api/application/servers/{server_id}/build',
+    headers=headers,
+    json=updated_configuration
+)
+print(response.json())`,
+    php: `<?php
+$client = new GuzzleHttp\\Client();
+$serverId = 2;
+
+$updatedConfiguration = [
+    'allocation' => 1,
+    'memory' => 2048,
+    'swap' => 0,
+    'disk' => 4096,
+    'io' => 500,
+    'cpu' => 200,
+    'feature_limits' => [
+        'databases' => 5,
+        'allocations' => 2,
+        'backups' => 10,
+    ],
+];
+
+$response = $client->patch("https://your-panel.com/api/application/servers/{$serverId}/build", [
+    'headers' => [
+        'Authorization' => 'Bearer ptla_YOUR_API_KEY',
+        'Accept' => 'Application/vnd.pterodactyl.v1+json',
+        'Content-Type' => 'application/json',
+    ],
+    'json' => $updatedConfiguration,
+]);
+
+$data = json_decode($response->getBody(), true);
+print_r($data);
+?>`,
+    go: `package main
+
+import (
+    "bytes"
+    "encoding/json"
+    "fmt"
+    "net/http"
+)
+
+func main() {
+    serverId := 2
+    url := fmt.Sprintf("https://your-panel.com/api/application/servers/%d/build", serverId)
+
+    updatedConfiguration := map[string]interface{}{
+        "allocation": 1,
+        "memory": 2048,
+        "swap": 0,
+        "disk": 4096,
+        "io": 500,
+        "cpu": 200,
+        "feature_limits": map[string]int{
+            "databases": 5,
+            "allocations": 2,
+            "backups": 10,
+        },
+    }
+
+    body, _ := json.Marshal(updatedConfiguration)
+    req, _ := http.NewRequest("PATCH", url, bytes.NewBuffer(body))
+    req.Header.Add("Authorization", "Bearer ptla_YOUR_API_KEY")
+    req.Header.Add("Accept", "Application/vnd.pterodactyl.v1+json")
+    req.Header.Add("Content-Type", "application/json")
+
+    client := &http.Client{}
+    resp, _ := client.Do(req)
+    defer resp.Body.Close()
+
+    fmt.Println("Status:", resp.Status)
+}`,
+    java: `import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.URI;
+
+int serverId = 2;
+String requestBody = """
+{
+  "allocation": 1,
+  "memory": 2048,
+  "swap": 0,
+  "disk": 4096,
+  "io": 500,
+  "cpu": 200,
+  "feature_limits": {
+    "databases": 5,
+    "allocations": 2,
+    "backups": 10
+  }
+}
+""";
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create(String.format("https://your-panel.com/api/application/servers/%d/build", serverId)))
+    .header("Authorization", "Bearer ptla_YOUR_API_KEY")
+    .header("Accept", "Application/vnd.pterodactyl.v1+json")
+    .header("Content-Type", "application/json")
+    .method("PATCH", HttpRequest.BodyPublishers.ofString(requestBody))
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());`,
+    csharp: `using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer ptla_YOUR_API_KEY");
+client.DefaultRequestHeaders.Add("Accept", "Application/vnd.pterodactyl.v1+json");
+
+int serverId = 2;
+var requestBody = """
+{
+  "allocation": 1,
+  "memory": 2048,
+  "swap": 0,
+  "disk": 4096,
+  "io": 500,
+  "cpu": 200,
+  "feature_limits": {
+    "databases": 5,
+    "allocations": 2,
+    "backups": 10
+  }
+}
+""";
+
+var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
+var response = await client.PatchAsync($"https://your-panel.com/api/application/servers/{serverId}/build", content);
+var responseBody = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseBody);`,
+    ruby: `require 'net/http'
+require 'json'
+
+server_id = 2
+uri = URI("https://your-panel.com/api/application/servers/#{server_id}/build")
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+
+updated_configuration = {
+  allocation: 1,
+  memory: 2048,
+  swap: 0,
+  disk: 4096,
+  io: 500,
+  cpu: 200,
+  feature_limits: {
+    databases: 5,
+    allocations: 2,
+    backups: 10
+  }
+}
+
+request = Net::HTTP::Patch.new(uri)
+request['Authorization'] = 'Bearer ptla_YOUR_API_KEY'
+request['Accept'] = 'Application/vnd.pterodactyl.v1+json'
+request['Content-Type'] = 'application/json'
+request.body = updated_configuration.to_json
+
+response = http.request(request)
+puts JSON.parse(response.body)`
+  }}
+/>
 
 
 
@@ -1581,6 +1798,8 @@ POST /api/application/servers/{server}/suspend
 
 
 
+<Tabs>
+<TabItem value="curl" label="cURL">
 ```bash
 curl -X POST "https://your-panel.com/api/application/servers/2/suspend" \
   -H "Authorization: Bearer ptla_YOUR_API_KEY" \
