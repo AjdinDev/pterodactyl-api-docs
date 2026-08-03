@@ -49,11 +49,11 @@ async function generateSimpleCard(routePath, outputDir) {
   ctx.fillStyle = '#1a365d';
   ctx.fillRect(0, 0, width, height);
   
-  // NETVPX in center - very simple
+  // Site name in center
   ctx.fillStyle = '#ffffff';
   ctx.font = 'bold 120px Arial';
   ctx.textAlign = 'center';
-  ctx.fillText('NETVPX', width/2, 250);
+  ctx.fillText('PteroAPI', width/2, 250);
   
   // Simple subtitle
   ctx.fillStyle = '#e2e8f0';
@@ -63,7 +63,7 @@ async function generateSimpleCard(routePath, outputDir) {
   // Very minimal bottom text
   ctx.fillStyle = '#cbd5e0';
   ctx.font = '32px Arial';
-  ctx.fillText('pterodactyl-api-docs.netvpx.com', width/2, 500);
+  ctx.fillText('pteroapi.com', width/2, 500);
   
   // Save the image
   const filename = routePath.replace(/\//g, '_').replace(/\.html$/, '') || 'index';
@@ -98,7 +98,7 @@ async function updateHtmlMeta(routePath, outDir) {
   
   // Get the social card filename
   const cardFilename = routePath.replace(/\//g, '_').replace(/\.html$/, '') || 'index';
-  const cardUrl = `https://pterodactyl-api-docs.netvpx.com/img/social/${cardFilename}.jpg`;
+  const cardUrl = `https://pteroapi.com/img/social/${cardFilename}.jpg`;
   
   // Read and update HTML file
   let html = fs.readFileSync(htmlPath, 'utf8');

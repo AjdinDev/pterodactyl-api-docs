@@ -12,7 +12,7 @@ keywords:
   - pterodactyl panel api keys
   - api token generation
   - secure api access
-image: /img/netvpx-social-card.jpg
+image: /img/pteroapi-social-card.jpg
 ---
 
 # Authentication

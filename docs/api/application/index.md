@@ -10,7 +10,7 @@ keywords:
   - node management
   - location management
   - administrative endpoints
-image: /img/netvpx-social-card.jpg
+image: /img/pteroapi-social-card.jpg
 ---
 
 # Application API

@@ -8,7 +8,7 @@ keywords:
   - controller methods
   - route definitions
   - service classes
-image: /img/netvpx-social-card.jpg
+image: /img/pteroapi-social-card.jpg
 ---
 
 # Source Code References
@@ -141,7 +141,6 @@ If you find issues or want to improve the Panel:
 
 1. **Report Issues**: [Panel Issues](https://github.com/pterodactyl/panel/issues)
 2. **Submit Pull Requests**: [Contributing Guide](https://github.com/pterodactyl/panel/blob/1.0-develop/CONTRIBUTING.md)
-3. **Join Discord**: [Pterodactyl Community](https://discord.gg/pterodactyl)
 
 ### 📚 **Development Setup**
 

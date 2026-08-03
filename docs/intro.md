@@ -5,11 +5,9 @@ description: Complete API documentation for Pterodactyl Panel v1. Learn how to i
 keywords: [pterodactyl, api, documentation, server management, rest api, websocket, automation]
 ---
 
-<!-- Force Cloudflare deployment refresh - OpenAPI plugin removed -->
-
 # Pterodactyl Panel API Documentation
 
-Welcome to the **NETVPX Pterodactyl v1 API documentation**. This documentation provides comprehensive information about the Pterodactyl Panel API, allowing you to programmatically manage servers, users, files, and more.
+Welcome to the **Pterodactyl v1 API documentation**. This documentation provides comprehensive information about the Pterodactyl Panel API, allowing you to programmatically manage servers, users, files, and more.
 
 ## About Pterodactyl
 
@@ -17,11 +15,9 @@ Pterodactyl is a free, open-source server management panel built with PHP, React
 
 ## About This Documentation
 
-This documentation is maintained by NETVPX out of good will for the Pterodactyl community. We believe in contributing to open-source projects and helping developers succeed with their implementations.
+This documentation is maintained as an independent community resource for Pterodactyl API users. We believe in contributing to open-source projects and helping developers succeed with their implementations.
 
-You won't find any ads, tracking (except for a cookieless analytics tool), or aggressive marketing throughout these docs. Just clean, comprehensive documentation focused on helping you build amazing applications with the Pterodactyl API.
-
-If you're looking for hosting solutions for your Pterodactyl panel, feel free to check out [NETVPX hosting services](https://netvpx.com). We offer reliable infrastructure that we use to test and validate all the examples in this documentation.
+You won't find ads, tracking, hosting pitches, or aggressive marketing throughout these docs. Just clean, comprehensive documentation focused on helping you build applications with the Pterodactyl API.
 
 
 ## Usage of AI
@@ -76,7 +72,7 @@ We welcome contributions from the community! Help improve this documentation for
 
 - **Quick Edits**: Click "Edit this page" on any documentation page
 - **Major Improvements**: Fork the repository and submit pull requests
-- **Report Issues**: Found an error? [Create a GitHub Issue](https://github.com/netvpx/pterodactyl-api-docs/issues/new)
+- **Report Issues**: Found an error? [Create a GitHub Issue](https://github.com/AjdinDev/pterodactyl-api-docs/issues/new)
 - **Code Examples**: Help add or improve multi-language examples
 
 👉 **[Read our Contributing Guide](/docs/contributing)** for detailed instructions on how to contribute.
@@ -92,11 +88,9 @@ Your feedback helps us make this documentation better for everyone in the commun
 
 If you encounter any issues with this documentation or the Pterodactyl API, here are some helpful resources:
 
-- Visit the [Pterodactyl Discord](https://discord.gg/pterodactyl)
 - Check the [Pterodactyl GitHub](https://github.com/pterodactyl/panel)
-- Visit the NETVPX [Discord](https://netvpx.com/discord)
-- Contact [NETVPX Support](https://netvpx.com/support)
+- Open a [documentation issue](https://github.com/AjdinDev/pterodactyl-api-docs/issues) for problems with these docs
 
 ---
 
-**Pterodactyl Links:** [Website](https://pterodactyl.io/) | [GitHub](https://github.com/pterodactyl) | [Discord](https://discord.gg/pterodactyl)
+**Pterodactyl Links:** [Website](https://pterodactyl.io/) | [GitHub](https://github.com/pterodactyl)

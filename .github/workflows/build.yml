@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [24.x]
 
     steps:
     - name: Checkout repository
@@ -44,7 +44,7 @@ jobs:
         echo "Build successful!"
 
     - name: Upload build artifacts
-      if: matrix.node-version == '20.x' && github.event_name == 'push'
+      if: matrix.node-version == '24.x' && github.event_name == 'push'
       uses: actions/upload-artifact@v4
       with:
         name: documentation-build
@@ -62,7 +62,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20.x'
+        node-version: '24.x'
         cache: 'npm'
 
     - name: Install dependencies
@@ -81,4 +81,4 @@ jobs:
           exit 1
         else
           echo "✅ No broken links found!"
-        fi 
+        fi

@@ -1,12 +1,12 @@
-# Contributing to NETVPX Pterodactyl API Documentation
+# Contributing to Pterodactyl API Documentation
 
-Thank you for your interest in contributing to the Pterodactyl API documentation! This project is maintained by NETVPX and shared freely with the community to help developers succeed with their Pterodactyl implementations.
+Thank you for your interest in contributing to the Pterodactyl API documentation. This project is shared freely with the community to help developers succeed with their Pterodactyl implementations.
 
 ## 🎯 How to Contribute
 
 ### 1. Reporting Issues
 
-- **Bug Reports**: Found an error in the documentation? Please [create an issue](https://github.com/netvpx/pterodactyl-api-docs/issues/new) with:
+- **Bug Reports**: Found an error in the documentation? Please [create an issue](https://github.com/AjdinDev/pterodactyl-api-docs/issues/new) with:
   - Clear description of the problem
   - Steps to reproduce (if applicable)
   - Expected vs actual behavior
@@ -25,7 +25,7 @@ For changes or new content:
 
 1. **Fork the repository**
    ```bash
-   git clone https://github.com/netvpx/pterodactyl-api-docs.git
+   git clone https://github.com/AjdinDev/pterodactyl-api-docs.git
    cd pterodactyl-api-docs
    npm install
    ```
@@ -104,7 +104,7 @@ When adding or updating code examples:
 ## 🔧 Development Setup
 
 ### Prerequisites
-- Node.js 20.0+
+- Node.js 24 LTS
 - npm or yarn
 
 ### Local Development
@@ -156,9 +156,8 @@ Each endpoint should include:
 ## 🤝 Community
 
 ### Getting Help
-- **Questions**: Use [GitHub Discussions](https://github.com/netvpx/pterodactyl-api-docs/discussions)
-- **Pterodactyl Chat**: Join the [Pterodactyl Discord](https://discord.gg/pterodactyl) which has a [dedicated API & Modding channel](https://discord.com/channels/122900397965705216/936744899787784282)
-- **NETVPX Support**: [Contact us](https://netvpx.com/support) for other questionst
+- **Questions**: Use [GitHub Discussions](https://github.com/AjdinDev/pterodactyl-api-docs/discussions)
+- **Documentation Issues**: Use [GitHub Issues](https://github.com/AjdinDev/pterodactyl-api-docs/issues) for bugs, unclear pages, and missing examples.
 
 ## 🚀 Release Process
 
@@ -172,4 +171,4 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 **Thank you for helping make Pterodactyl API documentation better for everyone! 🎉**
 
-*This project is maintained by [NETVPX](https://netvpx.com) and shared freely with the Pterodactyl community.* 
+*This project is shared freely with the Pterodactyl community.*
