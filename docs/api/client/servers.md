@@ -717,7 +717,6 @@ echo "CPU: " . round($stats['cpu_absolute'], 2) . "%\\n";
     "is_suspended": false,
     "resources": {
       "memory_bytes": 671088640,
-      "memory_limit_bytes": 1073741824,
       "cpu_absolute": 1.522,
       "disk_bytes": 2147483648,
       "network_rx_bytes": 676237,
@@ -733,7 +732,6 @@ echo "CPU: " . round($stats['cpu_absolute'], 2) . "%\\n";
 | Field | Description |
 |-------|-------------|
 | `memory_bytes` | Current memory usage in bytes |
-| `memory_limit_bytes` | Maximum memory allowed in bytes |
 | `cpu_absolute` | Current CPU usage percentage |
 | `disk_bytes` | Current disk usage in bytes |
 | `network_rx_bytes` | Total bytes received |
