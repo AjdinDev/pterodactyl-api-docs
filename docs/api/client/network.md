@@ -221,110 +221,61 @@ Request assignment of an available allocation to the server.
 
 ### Request Body
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `ip` | string | No | Specific IP address to assign |
-| `port` | integer | No | Specific port to assign |
+This endpoint does not accept a request body. When client auto-allocation is enabled, Pterodactyl selects an available allocation using the server's primary allocation IP, or creates one from the configured auto-allocation port range.
 
-:::info Note
-If no IP or port is specified, the system will automatically assign the next available allocation from the node's pool.
+:::tip Assigning Specific Allocations
+The Client API cannot request a specific IP address or port. To assign specific allocation IDs, use the [Application API server build configuration endpoint](../application/servers#update-server-build-configuration) with `add_allocations` or `remove_allocations`.
 :::
 
 ### Example Request
 
 
 
-<Tabs>
-<TabItem value="curl" label="cURL">
-```bash
-curl -X POST "https://your-panel.com/api/client/servers/d3aac109/network/allocations" \
-  -H "Authorization: Bearer ptlc_YOUR_API_KEY" \
-  -H "Accept: Application/vnd.pterodactyl.v1+json" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "ip": "45.86.168.218",
-    "port": 25568
-  }'
-```
-</TabItem>
-
-<TabItem value="javascript" label="JavaScript">
-```javascript
-const axios = require('axios');
+<CodeTabs
+  endpoint="/api/client/servers/{server}/network/allocations"
+  method="POST"
+  examples={{
+    curl: `curl -X POST "https://your-panel.com/api/client/servers/d3aac109/network/allocations" \\
+  -H "Authorization: Bearer ptlc_YOUR_API_KEY" \\
+  -H "Accept: Application/vnd.pterodactyl.v1+json"`,
+    javascript: `const axios = require('axios');
 
 const serverId = 'd3aac109';
-const allocationData = {
-  ip: '45.86.168.218',
-  port: 25568
-};
-
-const response = await axios.post(`https://your-panel.com/api/client/servers/${serverId}/network/allocations`, allocationData, {
+const response = await axios.post(\`https://your-panel.com/api/client/servers/\${serverId}/network/allocations\`, null, {
   headers: {
     'Authorization': 'Bearer ptlc_YOUR_API_KEY',
-    'Accept': 'Application/vnd.pterodactyl.v1+json',
-    'Content-Type': 'application/json'
+    'Accept': 'Application/vnd.pterodactyl.v1+json'
   }
 });
 
-console.log('Allocation assigned:', response.data.attributes);
-```
-</TabItem>
-
-<TabItem value="python" label="Python">
-```python
-import requests
-import json
+console.log('Allocation assigned:', response.data.attributes);`,
+    python: `import requests
 
 server_id = 'd3aac109'
-allocation_data = {
-    'ip': '45.86.168.218',
-    'port': 25568
-}
-
 headers = {
     'Authorization': 'Bearer ptlc_YOUR_API_KEY',
-    'Accept': 'Application/vnd.pterodactyl.v1+json',
-    'Content-Type': 'application/json'
+    'Accept': 'Application/vnd.pterodactyl.v1+json'
 }
 
-response = requests.post(f'https://your-panel.com/api/client/servers/{server_id}/network/allocations', 
-                        headers=headers, json=allocation_data)
-print('Allocation assigned:', response.json()['attributes'])
-```
-</TabItem>
-
-<TabItem value="php" label="PHP">
-```php
-<?php
+response = requests.post(f'https://your-panel.com/api/client/servers/{server_id}/network/allocations', headers=headers)
+print('Allocation assigned:', response.json()['attributes'])`,
+    php: `<?php
 $serverId = 'd3aac109';
-$allocationData = [
-    'ip' => '45.86.168.218',
-    'port' => 25568
-];
-
 $client = new GuzzleHttp\Client();
 
 $response = $client->post("https://your-panel.com/api/client/servers/{$serverId}/network/allocations", [
     'headers' => [
         'Authorization' => 'Bearer ptlc_YOUR_API_KEY',
-        'Accept' => 'Application/vnd.pterodactyl.v1+json',
-        'Content-Type' => 'application/json'
-    ],
-    'json' => $allocationData
+        'Accept' => 'Application/vnd.pterodactyl.v1+json'
+    ]
 ]);
 
 $data = json_decode($response->getBody(), true);
 print_r($data['attributes']);
-?>
-```
-</TabItem>
-
-<TabItem value="go" label="Go">
-```go
-package main
+?>`,
+    go: `package main
 
 import (
-    "bytes"
     "encoding/json"
     "fmt"
     "net/http"
@@ -332,19 +283,12 @@ import (
 
 func main() {
     serverId := "d3aac109"
-    allocationData := map[string]interface{}{
-        "ip":   "45.86.168.218",
-        "port": 25568,
-    }
-    
-    jsonData, _ := json.Marshal(allocationData)
     url := fmt.Sprintf("https://your-panel.com/api/client/servers/%s/network/allocations", serverId)
     
     client := &http.Client{}
-    req, _ := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
+    req, _ := http.NewRequest("POST", url, nil)
     req.Header.Add("Authorization", "Bearer ptlc_YOUR_API_KEY")
     req.Header.Add("Accept", "Application/vnd.pterodactyl.v1+json")
-    req.Header.Add("Content-Type", "application/json")
     
     resp, _ := client.Do(req)
     defer resp.Body.Close()
@@ -352,25 +296,13 @@ func main() {
     var result map[string]interface{}
     json.NewDecoder(resp.Body).Decode(&result)
     fmt.Println("Allocation assigned:", result["attributes"])
-}
-```
-</TabItem>
-
-<TabItem value="java" label="Java">
-```java
-import java.net.http.HttpClient;
+}`,
+    java: `import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
 
 String serverId = "d3aac109";
-String jsonData = """
-{
-  "ip": "45.86.168.218",
-  "port": 25568
-}
-""";
-
 String url = String.format("https://your-panel.com/api/client/servers/%s/network/allocations", serverId);
 
 HttpClient client = HttpClient.newHttpClient();
@@ -378,20 +310,12 @@ HttpRequest request = HttpRequest.newBuilder()
     .uri(URI.create(url))
     .header("Authorization", "Bearer ptlc_YOUR_API_KEY")
     .header("Accept", "Application/vnd.pterodactyl.v1+json")
-    .header("Content-Type", "application/json")
-    .POST(HttpRequest.BodyPublishers.ofString(jsonData))
+    .POST(HttpRequest.BodyPublishers.noBody())
     .build();
 
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-System.out.println("Allocation assigned: " + response.body());
-```
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-```csharp
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
+System.out.println("Allocation assigned: " + response.body());`,
+    csharp: `using System.Net.Http;
 using System.Threading.Tasks;
 
 var client = new HttpClient();
@@ -399,31 +323,13 @@ client.DefaultRequestHeaders.Add("Authorization", "Bearer ptlc_YOUR_API_KEY");
 client.DefaultRequestHeaders.Add("Accept", "Application/vnd.pterodactyl.v1+json");
 
 string serverId = "d3aac109";
-var allocationData = new {
-    ip = "45.86.168.218",
-    port = 25568
-};
-
-var json = JsonSerializer.Serialize(allocationData);
-var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-var response = await client.PostAsync($"https://your-panel.com/api/client/servers/{serverId}/network/allocations", content);
+var response = await client.PostAsync($"https://your-panel.com/api/client/servers/{serverId}/network/allocations", null);
 var responseContent = await response.Content.ReadAsStringAsync();
-Console.WriteLine("Allocation assigned: " + responseContent);
-```
-</TabItem>
-
-<TabItem value="ruby" label="Ruby">
-```ruby
-require 'net/http'
+Console.WriteLine("Allocation assigned: " + responseContent);`,
+    ruby: `require 'net/http'
 require 'json'
 
 server_id = 'd3aac109'
-allocation_data = {
-  ip: '45.86.168.218',
-  port: 25568
-}
-
 uri = URI("https://your-panel.com/api/client/servers/#{server_id}/network/allocations")
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
@@ -431,16 +337,12 @@ http.use_ssl = true
 request = Net::HTTP::Post.new(uri)
 request['Authorization'] = 'Bearer ptlc_YOUR_API_KEY'
 request['Accept'] = 'Application/vnd.pterodactyl.v1+json'
-request['Content-Type'] = 'application/json'
-request.body = allocation_data.to_json
 
 response = http.request(request)
 data = JSON.parse(response.body)
-puts "Allocation assigned: #{data['attributes']}"
-```
-</TabItem>
-
-</Tabs>
+puts "Allocation assigned: #{data['attributes']}"`
+  }}
+/>
 
 
 
@@ -475,37 +377,37 @@ puts "Allocation assigned: #{data['attributes']}"
 {
   "errors": [
     {
-      "code": "TooManyAllocationsException",
+      "code": "DisplayException",
       "status": "400",
-      "detail": "This server has reached its allocation limit."
+      "detail": "Cannot assign additional allocations to this server: limit has been reached."
     }
   ]
 }
 ```
 
 
-**Allocation Not Available (409)**
+**Auto-Allocation Disabled (400)**
 ```json
 {
   "errors": [
     {
-      "code": "AllocationNotAvailableException",
-      "status": "409",
-      "detail": "The requested allocation is not available or already in use."
+      "code": "AutoAllocationNotEnabledException",
+      "status": "400",
+      "detail": "Server auto-allocation is not enabled for this instance."
     }
   ]
 }
 ```
 
 
-**No Available Allocations (503)**
+**No Auto-Allocation Space Available (400)**
 ```json
 {
   "errors": [
     {
-      "code": "NoAvailableAllocationsException",
-      "status": "503",
-      "detail": "No available allocations found on this node."
+      "code": "NoAutoAllocationSpaceAvailableException",
+      "status": "400",
+      "detail": "Cannot assign additional allocation: no more space available on node."
     }
   ]
 }
@@ -1317,107 +1219,45 @@ Returns empty response body with status code 204.
 
 ## Network Configuration Examples
 
-### Game Server Setup
+### Request Additional Allocations
 
-Here's how to configure network allocations for different types of game servers:
-
-**Minecraft Server**
-```bash
-# Add primary allocation for Minecraft
-curl -X POST "https://your-panel.com/api/client/servers/d3aac109/network/allocations" \
-  -H "Authorization: Bearer ptlc_YOUR_API_KEY" \
-  -H "Accept: Application/vnd.pterodactyl.v1+json" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "ip": "45.86.168.218",
-    "port": 25565
-  }'
-```
-
-**FiveM Server**
-```bash
-# Add primary allocation for FiveM (30120)
-curl -X POST "https://your-panel.com/api/client/servers/d3aac109/network/allocations" \
-  -H "Authorization: Bearer ptlc_YOUR_API_KEY" \
-  -H "Accept: Application/vnd.pterodactyl.v1+json" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "ip": "45.86.168.218",
-    "port": 30120
-  }'
-```
-
-**CS:GO Server**
-```bash
-# Add primary allocation for CS:GO (27015)
-curl -X POST "https://your-panel.com/api/client/servers/d3aac109/network/allocations" \
-  -H "Authorization: Bearer ptlc_YOUR_API_KEY" \
-  -H "Accept: Application/vnd.pterodactyl.v1+json" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "ip": "45.86.168.218",
-    "port": 27015
-  }'
-```
-
-### Multiple Services
-
-Configure multiple allocations for servers running multiple services:
+The Client API can request additional allocations, but it cannot choose the IP address or port. Pterodactyl assigns an available allocation from the server's node.
 
 ```bash
-# Add web panel allocation (8080)
+# Request one additional allocation
 curl -X POST "https://your-panel.com/api/client/servers/d3aac109/network/allocations" \
   -H "Authorization: Bearer ptlc_YOUR_API_KEY" \
-  -H "Accept: Application/vnd.pterodactyl.v1+json" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "ip": "45.86.168.218",
-    "port": 8080
-  }'
+  -H "Accept: Application/vnd.pterodactyl.v1+json"
 
-# Add RCON allocation (25575) 
+# Request another additional allocation
 curl -X POST "https://your-panel.com/api/client/servers/d3aac109/network/allocations" \
-  -H "Authorization: Bearer ptlc_YOUR_API_KEY" \
-  -H "Accept: Application/vnd.pterodactyl.v1+json" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "ip": "45.86.168.218", 
-    "port": 25575
-  }'
-```
-
-### Set Primary Allocation
-
-```bash
-# Set allocation as primary (main server port)
-curl -X POST "https://your-panel.com/api/client/servers/d3aac109/network/allocations/1/primary" \
   -H "Authorization: Bearer ptlc_YOUR_API_KEY" \
   -H "Accept: Application/vnd.pterodactyl.v1+json"
 ```
 
-### Multiple Services
+### Assign Specific Game Ports
 
-Configure multiple allocations for servers running multiple services:
+Specific game ports must already exist as allocations. Administrators can assign specific allocation IDs to a server with the [Application API server build configuration endpoint](../application/servers#update-server-build-configuration).
 
 ```bash
-# Add web panel allocation (8080)
-curl -X POST "https://your-panel.com/api/client/servers/d3aac109/network/allocations" \
-  -H "Authorization: Bearer ptlc_YOUR_API_KEY" \
+# Assign allocation IDs 42 and 43 to a server using the Application API
+curl -X PATCH "https://your-panel.com/api/application/servers/2/build" \
+  -H "Authorization: Bearer ptla_YOUR_API_KEY" \
   -H "Accept: Application/vnd.pterodactyl.v1+json" \
   -H "Content-Type: application/json" \
   -d '{
-    "ip": "45.86.168.218",
-    "port": 8080
-  }'
-
-# Add RCON allocation (25575) 
-curl -X POST "https://your-panel.com/api/client/servers/d3aac109/network/allocations" \
-  -H "Authorization: Bearer ptlc_YOUR_API_KEY" \
-  -H "Accept: Application/vnd.pterodactyl.v1+json" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "ip": "45.86.168.218", 
-    "port": 25575
+    "allocation": 1,
+    "memory": 2048,
+    "swap": 0,
+    "disk": 20480,
+    "io": 500,
+    "cpu": 100,
+    "feature_limits": {
+      "databases": 2,
+      "allocations": 3,
+      "backups": 1
+    },
+    "add_allocations": [42, 43]
   }'
 ```
 
@@ -1458,7 +1298,9 @@ curl -I http://45.86.168.218:8080
 
 | Status | Code | Description |
 |--------|------|-------------|
-| 400 | `TooManyAllocationsException` | Allocation limit reached |
+| 400 | `DisplayException` | Allocation limit reached |
+| 400 | `AutoAllocationNotEnabledException` | Server auto-allocation is disabled |
+| 400 | `NoAutoAllocationSpaceAvailableException` | No auto-allocation space available on the node |
 | 400 | `CannotDeletePrimaryAllocationException` | Cannot remove primary allocation |
 | 400 | `ConflictingServerStateException` | Server state prevents operation |
 | 401 | `InvalidCredentialsException` | Invalid API key |
@@ -1488,4 +1330,4 @@ Network allocation operations require specific permissions:
 **Controller**: [`NetworkAllocationController`](https://github.com/pterodactyl/panel/blob/1.0-develop/app/Http/Controllers/Api/Client/Servers/NetworkAllocationController.php)  
 **Routes**: [`api-client.php`](https://github.com/pterodactyl/panel/blob/1.0-develop/routes/api-client.php) - Network allocation endpoints  
 **Allocation Model**: [`Allocation.php`](https://github.com/pterodactyl/panel/blob/1.0-develop/app/Models/Allocation.php)  
-**Allocation Service**: [`AllocationSelectionService`](https://github.com/pterodactyl/panel/blob/1.0-develop/app/Services/Allocations/AllocationSelectionService.php)
+**Allocation Service**: [`FindAssignableAllocationService`](https://github.com/pterodactyl/panel/blob/1.0-develop/app/Services/Allocations/FindAssignableAllocationService.php)
