@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Welcome to the **Pterodactyl v0.7** API documentation. This is a minimalistic version of the API reference for legacy installations.
 
-:::warning Legacy Version
+:::warning[Legacy Version]
 Pterodactyl v0.7 is **deprecated**. Please upgrade to the latest version as soon as possible. This documentation is provided for legacy installations only.
 :::
 

@@ -223,7 +223,7 @@ Request assignment of an available allocation to the server.
 
 This endpoint does not accept a request body. When client auto-allocation is enabled, Pterodactyl selects an available allocation using the server's primary allocation IP, or creates one from the configured auto-allocation port range.
 
-:::tip Assigning Specific Allocations
+:::tip[Assigning Specific Allocations]
 The Client API cannot request a specific IP address or port. To assign specific allocation IDs, use the [Application API server build configuration endpoint](../application/servers#update-server-build-configuration) with `add_allocations` or `remove_allocations`.
 :::
 
@@ -632,7 +632,7 @@ puts "Primary allocation set: #{data['attributes']}"
 ```
 
 
-:::info Primary Allocation
+:::info[Primary Allocation]
 The primary allocation is the main IP:Port combination used for server connections. Only one allocation can be primary at a time.
 :::
 

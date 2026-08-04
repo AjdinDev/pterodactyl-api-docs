@@ -11,7 +11,7 @@ import CodeTabs from '@site/src/components/CodeTabs';
 
 The Application API Database Management endpoints allow administrators to manage databases for servers. These endpoints provide operations for creating, viewing, and managing MySQL databases associated with servers.
 
-:::warning Administrative Access Required
+:::warning[Administrative Access Required]
 These endpoints require administrative privileges and an Application API key with appropriate permissions.
 :::
 

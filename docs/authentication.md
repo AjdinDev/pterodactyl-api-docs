@@ -87,7 +87,7 @@ curl "https://your-panel.com/api/application/users" \
 
 ## API Key Security
 
-:::warning Security Best Practices
+:::warning[Security Best Practices]
 - **Never expose your API keys** in client-side code or public repositories
 - **Use IP restrictions** when possible to limit key usage
 - **Rotate keys regularly** for enhanced security

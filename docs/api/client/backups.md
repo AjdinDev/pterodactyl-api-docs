@@ -1676,7 +1676,7 @@ BackupManager.delete_backup('d3aac109', 'c3948f1a-67b2-4d89-8c45-a1b2c3d4e5f6')
 
 Returns empty response body with status code 204.
 
-:::danger Warning
+:::danger[Warning]
 Backup deletion is **permanent and irreversible**. Deleted backups cannot be recovered.
 :::
 
@@ -2047,7 +2047,7 @@ BackupManager.restore_backup('d3aac109', 'a4962fe6-90c8-4b89-ba62-a5d3b06426c0')
 
 Returns empty response body with status code 202 (Accepted).
 
-:::warning Important
+:::warning[Important]
 Backup restoration will **permanently replace all server files** with the backup contents. Make sure to create a backup of the current state if needed.
 :::
 

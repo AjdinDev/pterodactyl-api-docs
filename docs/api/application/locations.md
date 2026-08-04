@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Application API Location Management endpoints allow administrators to manage geographic locations in the panel. Locations are used to organize nodes by geographic regions or data centers for better server management and user experience.
 
-:::warning Administrative Access Required
+:::warning[Administrative Access Required]
 These endpoints require administrative privileges and should only be used by trusted applications with proper authentication.
 :::
 
@@ -997,7 +997,7 @@ Delete a location from the panel. This action is irreversible.
 DELETE /api/application/locations/{location}
 ```
 
-:::warning Dependencies Required
+:::warning[Dependencies Required]
 A location can only be deleted if it has no associated nodes. Move or delete all nodes in the location before attempting to delete it.
 :::
 

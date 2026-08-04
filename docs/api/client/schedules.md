@@ -1381,7 +1381,7 @@ end
 
 Returns empty response body with status code 204.
 
-:::danger Warning
+:::danger[Warning]
 Schedule deletion is **permanent and irreversible**. All associated tasks will also be deleted.
 :::
 

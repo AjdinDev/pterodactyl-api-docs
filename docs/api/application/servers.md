@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Application API Server Management endpoints allow administrators to manage all servers in the panel. These endpoints provide comprehensive server lifecycle management including creation, configuration, suspension, and deletion.
 
-:::warning Administrative Access Required
+:::warning[Administrative Access Required]
 These endpoints require administrative privileges and should only be used by trusted applications with proper authentication.
 :::
 
@@ -2463,7 +2463,7 @@ curl -X POST "https://your-panel.com/api/application/servers/2/databases/3/reset
 }
 ```
 
-:::warning Password Security
+:::warning[Password Security]
 The new password is only returned in this response. Store it securely as it cannot be retrieved again through the API.
 :::
 
@@ -2485,7 +2485,7 @@ curl -X DELETE "https://your-panel.com/api/application/servers/2/databases/3" \
 
 Returns empty response body with status code 204.
 
-:::danger Warning
+:::danger[Warning]
 Database deletion is **permanent and irreversible**. All data will be lost.
 :::
 

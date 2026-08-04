@@ -31,7 +31,7 @@ curl "https://your-panel.com/api/application/users" \
   -H "Accept: Application/vnd.pterodactyl.v1+json"
 ```
 
-:::warning Administrative Access Required
+:::warning[Administrative Access Required]
 These endpoints require administrative privileges and should only be used by trusted applications with proper authentication. Application API keys provide full panel access.
 :::
 

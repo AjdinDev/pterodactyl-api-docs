@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The WebSocket API enables real-time communication with Pterodactyl servers, providing live console access, log streaming, and power state monitoring. This API is essential for building interactive server management interfaces.
 
-:::warning Client API Access Only
+:::warning[Client API Access Only]
 WebSocket connections use Client API authentication and provide access only to servers the authenticated user owns or has permissions for. Users must have the `websocket.connect` permission to obtain tokens.
 :::
 
