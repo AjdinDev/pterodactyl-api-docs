@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Application API Node Management endpoints allow administrators to manage Wings daemon nodes in the panel. These endpoints provide comprehensive node lifecycle management including creation, configuration, allocation management, and deletion.
 
-:::warning Administrative Access Required
+:::warning[Administrative Access Required]
 These endpoints require administrative privileges and should only be used by trusted applications with proper authentication.
 :::
 

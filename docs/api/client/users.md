@@ -1168,7 +1168,7 @@ puts "User permissions updated: #{data['attributes']}"
 ```
 
 
-:::info Permission Updates
+:::info[Permission Updates]
 Permission updates completely replace the user's existing permissions. Include all permissions you want the user to have, not just the ones you're adding.
 :::
 
@@ -1378,7 +1378,7 @@ end
 
 Returns empty response body with status code 204.
 
-:::warning Access Removal
+:::warning[Access Removal]
 Removing a subuser immediately revokes all their access to the server. They will be logged out and unable to perform any actions.
 :::
 
@@ -1734,7 +1734,7 @@ User management operations require specific permissions:
 | `user.update` | Modify subuser permissions |
 | `user.delete` | Remove subusers |
 
-:::info Server Owner Privileges
+:::info[Server Owner Privileges]
 Server owners automatically have all permissions and can perform all user management operations regardless of explicit permission grants.
 :::
 

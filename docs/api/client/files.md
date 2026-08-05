@@ -1156,7 +1156,7 @@ curl -X POST "https://your-panel.com/api/client/servers/d3aac109/files/delete" \
 
 Returns empty response body with status code 204.
 
-:::warning Permanent Deletion
+:::warning[Permanent Deletion]
 File deletion is permanent and cannot be undone. Always ensure you have backups before deleting important files.
 :::
 
@@ -1932,7 +1932,7 @@ puts "Files deleted successfully"`
 
 Returns empty response body with status code 204.
 
-:::warning Important
+:::warning[Important]
 Deleted files cannot be recovered. Always create backups before deleting important files.
 :::
 

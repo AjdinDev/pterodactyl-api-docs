@@ -392,7 +392,7 @@ if ($httpCode === 200) {
 }
 ```
 
-:::warning Important
+:::warning[Important]
 Password rotation immediately invalidates the old password. Update your application configuration before rotating passwords to avoid connection failures.
 :::
 
@@ -423,7 +423,7 @@ curl -X DELETE "https://your-panel.com/api/client/servers/d3aac109/databases/s4_
 
 Returns empty response body with status code 204.
 
-:::danger Permanent Deletion
+:::danger[Permanent Deletion]
 Database deletion is irreversible and will permanently destroy all data. Always create backups before deleting databases.
 :::
 

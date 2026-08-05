@@ -670,7 +670,7 @@ curl -X POST "https://your-panel.com/api/client/account/api-keys" \
 ```
 
 
-:::warning Important
+:::warning[Important]
 The `secret_token` in the `meta` object is only returned once during creation. Store it securely as it cannot be retrieved again.
 :::
 

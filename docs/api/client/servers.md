@@ -1184,7 +1184,7 @@ curl -X POST "https://your-panel.com/api/client/servers/d3aac109/settings/reinst
 
 Returns empty response body with status code 202.
 
-:::warning Important
+:::warning[Important]
 Reinstalling a server will just **rerun the install script** with all files still on the server. There is also no endpoint to delete all files.
 :::
 
@@ -1307,7 +1307,7 @@ Returns empty response body with status code 204.
 }
 ```
 
-:::info Available Images
+:::info[Available Images]
 The available Docker images are defined by the server's egg configuration. Use the startup configuration endpoint to see available images in the `meta.docker_images` field.
 :::
 
@@ -2003,7 +2003,7 @@ Trigger a reinstallation of the server. This will stop the server and re-run the
 
 **`POST /api/client/servers/{server}/settings/reinstall`**
 
-:::warning Important
+:::warning[Important]
 Reinstalling a server will just **rerun the install script** with all files still on the server. There is also no endpoint to delete all files.
 :::
 

@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Application API User Management endpoints allow administrators to manage all users in the panel. These endpoints provide full CRUD (Create, Read, Update, Delete) operations for user accounts.
 
-:::warning Administrative Access Required
+:::warning[Administrative Access Required]
 These endpoints require administrative privileges and should only be used by trusted applications with proper authentication.
 :::
 
